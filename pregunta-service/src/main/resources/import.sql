@@ -1,0 +1,2 @@
+INSERT INTO pregunta (pregunta, respuesta, dificultad) VALUES ('¿Cuál es la capital de Francia?', 'París', 'Fácil');
+INSERT INTO pregunta (pregunta, respuesta, dificultad) VALUES ('¿Cuál es el río más largo del mundo?', 'Amazonas', 'Medio');
