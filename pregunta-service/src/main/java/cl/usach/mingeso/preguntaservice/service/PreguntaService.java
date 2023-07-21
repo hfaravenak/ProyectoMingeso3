@@ -15,9 +15,6 @@ public class PreguntaService {
 
     public ArrayList<PreguntaEntity> obtenerPreguntas() { return (ArrayList<PreguntaEntity>) preguntaRepository.findAll(); }
 
-    public ArrayList<PreguntaEntity> obtenerPreguntasPorDificultad(String dificultad) { return preguntaRepository.findByDificultad(dificultad);
-    }
-
-
+    public ArrayList<PreguntaEntity> obtenerPreguntasPorDificultad(String dificultad) { return preguntaRepository.findByDificultad(dificultad); }
 
 }
