@@ -17,4 +17,6 @@ public class PreguntaService {
 
     public ArrayList<PreguntaEntity> obtenerPreguntasPorDificultad(String dificultad) { return preguntaRepository.findByDificultad(dificultad); }
 
+    public PreguntaEntity guardarPregunta(PreguntaEntity preguntaEntity) { PreguntaEntity nuevaPregunta = preguntaRepository.save(preguntaEntity); return nuevaPregunta; }
+
 }

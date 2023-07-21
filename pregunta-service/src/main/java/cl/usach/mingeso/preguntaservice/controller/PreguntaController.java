@@ -4,10 +4,7 @@ import cl.usach.mingeso.preguntaservice.entity.PreguntaEntity;
 import cl.usach.mingeso.preguntaservice.service.PreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -30,4 +27,11 @@ public class PreguntaController {
         ArrayList<PreguntaEntity> preguntas = preguntaService.obtenerPreguntasPorDificultad(dificultad);
         return ResponseEntity.ok(preguntas);
     }
+
+    @PostMapping("/agregar-pregunta")
+    public ResponseEntity<PreguntaEntity> agregarPregunta(@RequestBody PreguntaEntity preguntaEntity){
+        PreguntaEntity nuevaPregunta = preguntaService.guardarPregunta(preguntaEntity);
+        return ResponseEntity.ok(nuevaPregunta);
+    }
+
 }
