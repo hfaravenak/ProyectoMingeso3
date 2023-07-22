@@ -11,6 +11,7 @@ public class PreguntaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String pregunta;
+    private String codigo;
     private String respuesta;
     private String dificultad;
 
@@ -28,6 +29,14 @@ public class PreguntaEntity {
 
     public void setPregunta(String pregunta) {
         this.pregunta = pregunta;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getRespuesta() {
