@@ -15,6 +15,8 @@ public class PreguntaEntity {
     private String respuesta;
     private String dificultad;
 
+    //OOOOJOOOO CON CAMBIAR ALGUN ATRIBUTO, SI HACES ESTO CAMBIALO EN EL IMPORT.SQL QUE TIENES.
+
     public Integer getId() {
         return id;
     }
@@ -54,4 +56,5 @@ public class PreguntaEntity {
     public void setDificultad(String dificultad) {
         this.dificultad = dificultad;
     }
+
 }
