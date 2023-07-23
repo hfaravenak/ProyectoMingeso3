@@ -7,21 +7,19 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "pregunta")
 public class PreguntaEntity {
     @Id
-    @NotNull
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = true)
+    private Long id;
     private String pregunta;
     private String codigo;
     private String respuesta;
     private String dificultad;
 
-    //OOOOJOOOO CON CAMBIAR ALGUN ATRIBUTO, SI HACES ESTO CAMBIALO EN EL IMPORT.SQL QUE TIENES.
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -56,5 +54,9 @@ public class PreguntaEntity {
     public void setDificultad(String dificultad) {
         this.dificultad = dificultad;
     }
+
+    //OOOOJOOOO CON CAMBIAR ALGUN ATRIBUTO, SI HACES ESTO CAMBIALO EN EL IMPORT.SQL QUE TIENES.
+
+
 
 }

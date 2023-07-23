@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 
 @Repository
-public interface PreguntaRepository extends JpaRepository<PreguntaEntity, Integer> {
+public interface PreguntaRepository extends JpaRepository<PreguntaEntity, Long> {
 
     ArrayList<PreguntaEntity> findByDificultad(String dificultad);
 
