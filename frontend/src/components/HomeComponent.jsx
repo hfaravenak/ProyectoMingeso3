@@ -1,12 +1,17 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { Link } from "react-router-dom";
+
 
 export default function HomeComponent() {
   const ComenzarFacil = () => {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);
     window.location.href = "/prueba-facil";
+    
   };
+
+
 
   return (
     <HomeContainer>
@@ -15,7 +20,7 @@ export default function HomeComponent() {
           <span>¡</span>Code Mastering<span>!</span>
         </AnimatedHeader>
         <HeaderText>
-          Aprende, mejora y mantente al día con tus códigos en Python.
+          ¡Aprende, mejora y mantente al día con tus códigos en Python!
         </HeaderText>
       </Header>
       <Levels>
@@ -36,9 +41,11 @@ export default function HomeComponent() {
         </LevelCard>
       </Levels>
       <NewChallenge>
-        <h2>Agregar tu pregunta</h2>
+        <h2>Agrega tu pregunta</h2>
         <p>¿Te gustaría que tu pregunta apareciera en nuestra aplicación? Accede a esta opción para agregar una nueva pregunta.</p>
+        <Link to="/ingresar-pregunta">
         <StartButton>Acceder</StartButton>
+        </Link>
       </NewChallenge>
     </HomeContainer>
   );

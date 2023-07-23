@@ -34,4 +34,10 @@ public class PreguntaController {
         return ResponseEntity.ok(nuevaPregunta);
     }
 
+    @GetMapping("/random-por-dificultad/{dificultad}")
+    public ResponseEntity<ArrayList<PreguntaEntity>> getByDificultadRandomized(@PathVariable("dificultad") String dificultad){
+        ArrayList<PreguntaEntity> preguntas = preguntaService.obtener4PreguntasAleatoriasPorDificultad(dificultad);
+        return ResponseEntity.ok(preguntas);
+    }
+
 }
