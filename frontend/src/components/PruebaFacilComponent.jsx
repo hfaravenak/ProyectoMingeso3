@@ -25,7 +25,7 @@ class PruebaFacilComponent extends Component {
         <div className="text-center">
           <h1 className="asd">
             <b>
-              <u>Prueba: Modo Básico </u>
+              <u>Modo Básico </u>
             </b>
           </h1>
           {this.state.datas.map((data, index) => (

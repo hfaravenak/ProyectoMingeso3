@@ -8,8 +8,17 @@ export default function HomeComponent() {
     localStorage.setItem("puntaje", 0);
     localStorage.setItem("restantes", 4);
     window.location.href = "/prueba-facil";
-    
-  };
+    }
+    const ComenzarIntermedio = () => {
+      localStorage.setItem("puntaje", 0);
+      localStorage.setItem("restantes", 4);
+      window.location.href = "/prueba-intermedio";
+    }
+    const ComenzarDificil = () => {
+      localStorage.setItem("puntaje", 0);
+      localStorage.setItem("restantes", 4);
+      window.location.href = "/prueba-dificil";
+    };
 
 
 
@@ -32,12 +41,12 @@ export default function HomeComponent() {
         <LevelCard>
           <h2>Modo Intermedio</h2>
           <p>Este modo está hecho especialmente para aquellos estudiantes que ya han realizado sus primeros programas en Python.</p>
-          <StartButton>Comenzar</StartButton>
+          <StartButton onClick={ComenzarIntermedio}>Comenzar</StartButton>
         </LevelCard>
         <LevelCard>
           <h2>Modo Avanzado</h2>
           <p>El modo para los experimentados en la programación con Python.</p>
-          <StartButton>Comenzar</StartButton>
+          <StartButton onClick={ComenzarDificil}>Comenzar</StartButton>
         </LevelCard>
       </Levels>
       <NewChallenge>

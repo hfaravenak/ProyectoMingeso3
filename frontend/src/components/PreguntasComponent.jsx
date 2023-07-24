@@ -32,7 +32,7 @@ export default function PreguntasComponent({ id, pregunta, code, resp }) {
       setTrueAnswer(0);
     }
 
-    if (localStorage.getItem("restantes") === 0) {
+    if (localStorage.getItem("restantes") == 0) {
       window.location.href = "/resultados";
     }
   };
@@ -70,9 +70,9 @@ export default function PreguntasComponent({ id, pregunta, code, resp }) {
               <Form.Control type="respuesta" placeholder="Ingresa tu respuesta" />
             </Form.Group>
           </Form>
-          {trueAnswer === 1 ? (
+          {trueAnswer == 1 ? (
             <h3>¡Respuesta Correcta. Obtienes 7 puntos!</h3>
-          ) : trueAnswer === 0 ? (
+          ) : trueAnswer == 0 ? (
             <h3>Respuesta Incorrecta. Obtienes 1 punto.</h3>
           ) : (
             <button varian="primary" onClick={compararRespuestas}>

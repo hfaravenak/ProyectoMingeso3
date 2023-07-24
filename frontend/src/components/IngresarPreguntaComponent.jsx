@@ -9,11 +9,10 @@ import { dracula } from '@uiw/codemirror-theme-dracula';
 import NavbarComponent2 from "./NavbarComponent2";
 import IngresarPreguntaService from "../services/IngresarPreguntaService";
 
-
 export default function IngresarPreguntaComponent(props) {
   const initialState = {
     pregunta: "",
-    codigo: "", // Valor inicial del código
+    codigo: "", 
     respuesta: "",
     dificultad: ""
   };
@@ -22,22 +21,22 @@ export default function IngresarPreguntaComponent(props) {
 
   const changePreguntaHandler = event => {
     setInput({ ...input, pregunta: event.target.value });
-    console.log(input.pregunta);
   };
 
   const changeCodigoHandler = useCallback((value) => {
     setInput({ ...input, codigo: value });
-    console.log(value);
   }, [input]);
 
   const changeRespuestaHandler = event => {
     setInput({ ...input, respuesta: event.target.value });
-    console.log(input.respuesta);
   };
 
   const changeDificultadHandler = event => {
     setInput({ ...input, dificultad: event.target.value });
-    console.log(input.dificultad);
+  };
+
+  const limpiarCampos = () => {
+    setInput(initialState);
   };
 
   const agregarPregunta = e => {
@@ -52,13 +51,10 @@ export default function IngresarPreguntaComponent(props) {
       if (respuesta) {
         swal("Pregunta agregada correctamente!", { icon: "success", timer: "3000" });
         let pregunta = { pregunta: input.pregunta, codigo: input.codigo, respuesta: input.respuesta, dificultad: input.dificultad };
-        console.log(input.pregunta)
-        console.log(input.codigo)
-        console.log(input.respuesta)
-        console.log(input.dificultad)
-        console.log("pregunta => " + JSON.stringify(pregunta));
         IngresarPreguntaService.ingresarPregunta(pregunta).then(
           (res) => {
+            // Limpiar campos después de agregar la pregunta
+            limpiarCampos();
           }
         );
       } else {
@@ -97,7 +93,7 @@ export default function IngresarPreguntaComponent(props) {
                       width="600px"
                       theme={dracula}
                       extensions={[python()]}
-                      align = "left"
+                      align="left"
                       onChange={(value, viewUpdate) => changeCodigoHandler(value)}
                     />
                   </Form.Group>
